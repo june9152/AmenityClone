@@ -14,6 +14,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Configuration
 @RequiredArgsConstructor
@@ -61,13 +63,16 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests()
                 .antMatchers(PERMIT_URL_ARRAY).permitAll()
                 .antMatchers("/api/user/**").permitAll()
-                .antMatchers("/api/amenity/**").permitAll()
+                .antMatchers("/api/amenity/{amenityType}").permitAll()
+                .antMatchers("/api/amenity/filterAmenity").permitAll()
+                .antMatchers("/api/amenity/search").permitAll()
                 .antMatchers("/api/review/{amenityId}").permitAll()
                 .anyRequest().authenticated()
 
                 .and().addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
+
     }
 
 }

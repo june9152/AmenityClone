@@ -31,8 +31,8 @@ public class ReviewController {
     @Operation(summary = "숙박업소 상세 조회 내 토큰값 없이 리뷰 조회 API" , description = "숙박업소 리뷰 조회")
     @ApiResponses(value ={@ApiResponse(responseCode= "200", description = "숙박업소 리뷰 조회")})
     @GetMapping("/api/amenity/detail/{amenityId}/review")
-    public ReviewDetailDto getReview(@PathVariable("amenityId") Long amenityId, @RequestPart("imgUrl") List<MultipartFile> image) {
-        return reviewService.getReview(amenityId, image);
+    public ReviewDetailDto getReview(@PathVariable("amenityId") Long amenityId) {
+        return reviewService.getReview(amenityId);
     }
 
 

@@ -42,33 +42,37 @@ public class ReviewService {
         List<ReviewImg> reviewImgList = new ArrayList<>();
         if(reservesList.size() > 0) {
             review = new Review(reviewTitle, reviewStar, reviewScore, reviewContents, user, amenity, reservesList.get(0));
+            reviewRepository.save(review);
             Long mainCnt = 0L;
             Long chkCnt = 0L;
             int imgCnt = 0;
-            List<String> imgPaths = s3Service.upload(image, "Review");
-            for (String url : imgPaths) {
-                chkCnt = reviewImgRepository.findImg_ReviewId(review.getReviewId());
-                if (!chkCnt.equals(mainCnt)) {
-                    mainCnt = chkCnt++;
+            if (!image.isEmpty()) {
+                List<String> imgPaths = s3Service.upload(image, "Review");
+                for (String url : imgPaths) {
+                    chkCnt = reviewImgRepository.findImg_ReviewId(review.getReviewId());
+                    if (!chkCnt.equals(mainCnt)) {
+                        mainCnt = chkCnt++;
+                    }
+                    ReviewImg reviewImg = new ReviewImg(url, review, mainCnt);
+                    reviewImgRepository.save(reviewImg);
+                    reviewImgList.add(reviewImg);
                 }
-                ReviewImg reviewImg = new ReviewImg(imgPaths.get(imgCnt), review, mainCnt);
-                reviewImgList.add(reviewImg);
+                review.setReviewImgList(reviewImgList);
+                reviewRepository.save(review);
             }
-            review.setReviewImgList(reviewImgList);
-            reviewRepository.save(review);
+
             return new ResponseDto("리뷰 작성 성공", HttpStatus.OK);
-        }
-        else
+        } else
             return new ResponseDto("리뷰 작성 권한이 없습니다", HttpStatus.BAD_REQUEST);
     }
 
     @Transactional(readOnly = true)
-    public ReviewDetailDto getReview(Long amenityId, List<MultipartFile> image) {
+    public ReviewDetailDto getReview(Long amenityId) {
         List<Review> reviewList = reviewRepository.findReviewByAmenity_AmenityId(amenityId);
         double starAvg = reviewRepository.getStarAvg(amenityId);
         double scoreAvg = reviewRepository.getScoreAvg(amenityId);
-        List<ReviewDto> reviewDtoList = null;
-        List<ReviewImgDto> reviewImgDtoList = null;
+        List<ReviewDto> reviewDtoList = new ArrayList<>();
+        List<ReviewImgDto> reviewImgDtoList = new ArrayList<>();
 
         for(Review review: reviewList) {
             ReviewDto reviewDto = new ReviewDto(review);
