@@ -88,7 +88,7 @@ public class ReserveService {
         reserve.setPrice(reserveRequestDto.getPrice());
         reserve.setReserveStartDate(reserveRequestDto.getReserveStartDate());
         reserve.setReserveEndDate(reserveRequestDto.getReserveEndDate());
-        reserve.setRoomId(reserveRequestDto.getRoomoId());
+        reserve.setRoomId(reserveRequestDto.getRoomId());
         reserve.setUsername(reserveRequestDto.getUsername());
         reserve.setPayMethod(reserveRequestDto.getPayMethod());
         reserve.setUserEmail(reserveRequestDto.getUserEmail());

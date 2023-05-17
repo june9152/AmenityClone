@@ -14,7 +14,7 @@ public class ReserveRequestDto {
     private String payMethod;
     private String userEmail;
     private Long amenityId;
-    private Long roomoId;
+    private Long roomId;
     private Long price;
     private String reserveStartDate;
     private String reserveEndDate;
