@@ -17,7 +17,11 @@
 
 ## 📰 ERD
 ![hh66 ERD](https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/a5a8e351-6365-43c1-bede-76a5bc01670f)
+![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/98ed39c4-c173-4938-9a99-319bd35718fb)
+![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/7fb5f467-79cd-4a3c-ac30-61bfe173bea1)
+![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/9d02227a-e18b-4b7d-9fe6-7501fcf03c4d)
 
+<img src="이미지주소.png" width="200" height="400"/>
 
 ## 📖 API 명세서
 <details>
