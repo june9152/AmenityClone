@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,28 +37,30 @@ public class ReviewService {
         double reviewStar = requestDto.getReviewStar();
         double reviewScore = requestDto.getReviewScore();
         Amenity amenity = amenityRepository.findAmenityByAmenityId(amenityId);
-        List<Reserve> reservesList = reserveRepository.findReserveByAmenityIdAndUserEmailOrderByCreateDateDesc(amenityId, user.getUserEmail());
+        List<Reserve> reservesList = reserveRepository.findReserveByAmenityIdAndUserIdOrderByCreateDateDesc(amenityId, user.getUserId());
         Review review = null;
+        List<ReviewImg> reviewImgList = new ArrayList<>();
         if(reservesList.size() > 0) {
             review = new Review(reviewTitle, reviewStar, reviewScore, reviewContents, user, amenity, reservesList.get(0));
-            reviewRepository.save(review);
             Long mainCnt = 0L;
             Long chkCnt = 0L;
             int imgCnt = 0;
             List<String> imgPaths = s3Service.upload(image, "Review");
-            for(String url: imgPaths) {
+            for (String url : imgPaths) {
                 chkCnt = reviewImgRepository.findImg_ReviewId(review.getReviewId());
-                if(!chkCnt.equals(mainCnt)) {
+                if (!chkCnt.equals(mainCnt)) {
                     mainCnt = chkCnt++;
                 }
                 ReviewImg reviewImg = new ReviewImg(imgPaths.get(imgCnt), review, mainCnt);
+                reviewImgList.add(reviewImg);
             }
+            review.setReviewImgList(reviewImgList);
+            reviewRepository.save(review);
             return new ResponseDto("리뷰 작성 성공", HttpStatus.OK);
         }
         else
             return new ResponseDto("리뷰 작성 권한이 없습니다", HttpStatus.BAD_REQUEST);
     }
-
 
     @Transactional(readOnly = true)
     public ReviewDetailDto getReview(Long amenityId, List<MultipartFile> image) {

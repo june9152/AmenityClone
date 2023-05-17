@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface ReserveRepository extends JpaRepository<Reserve, Long> {
     List<Reserve> findByUserId(Long userId);
 
-    List<Reserve> findReserveByAmenityIdAndUserEmailOrderByCreateDateDesc(Long amenityId, String userEmail);
+    List<Reserve> findReserveByAmenityIdAndUserIdOrderByCreateDateDesc(Long amenityId, Long userId);
 
     @Query("select r from TB_RESERVE r where r.reserveStartDate >= :startDat and r.reserveEndDate <= :endDat")
     List<Reserve> chkReserveDat(@Param("startDat") Long startDat, @Param("endDat") Long endDat);
