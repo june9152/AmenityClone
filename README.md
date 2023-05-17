@@ -1,5 +1,3 @@
-﻿# AmenityClone
-
 # miniproject_hanhae66
 
 
@@ -7,7 +5,7 @@
 >개발 기간: 2023.05.11 ~ 2023.05.18</p>🎥 시연영상 
 
 ### 여기어떠니
-  - 여기어떄 크롤링 프로젝트 입니다
+  - [여기어때] 크롤링 프로젝트 입니다
   - 호텔, 펜션 정보를 조회, 예약(실제 결제는 안됨)을 할 수 있도록 구현하는것을 목표로 했습니다.
   - 다중 이미지 조회, 업로드 및 QueryDsl 이용한 동적 쿼리 등 기본기를 다지는 것을 중점으로 하였습니다.
 
@@ -15,7 +13,8 @@
 (https://www.notion.so/S-A-afa6ceba07db4022bebde44ccb35807a)
 
 ## 📜와이어 프레임
-<img width="913" alt="스크린샷 2023-05-11 014246" src="https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/b30b6beb-c5e0-4635-b1ab-7bc7847a0d3a">
+<!-- <img width="913" alt="스크린샷 2023-05-11 014246" src="https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/b30b6beb-c5e0-4635-b1ab-7bc7847a0d3a"> -->
+<img width="913" src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/6a5e01bc-392a-41e5-8cfa-cabbb32659fc)">
 
 ## 📰 ERD
 ![hh66 ERD](https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/a5a8e351-6365-43c1-bede-76a5bc01670f)
