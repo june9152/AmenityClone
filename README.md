@@ -13,16 +13,21 @@
 (https://www.notion.so/S-A-afa6ceba07db4022bebde44ccb35807a)
 
 ## 📜와이어 프레임
-![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d2459eed-e7ae-4717-990d-a1dbe7b2eb64)
+
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d5c2eaec-d3ae-4482-8fb1-308dfcd61749).png" width="200" height="400"/>
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/f84a03b9-8f04-4bbf-bb12-71cb1098e61b).png" width="200" height="400"/>
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/f7ac4316-166c-4ce8-9851-6a5d347daa82).png" width="200" height="400"/>
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/e94cc01c-8e08-4073-aa88-852bfa32a27f).png" width="200" height="400"/>
+
 
 ## 📰 ERD
-![hh66 ERD](https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/a5a8e351-6365-43c1-bede-76a5bc01670f)
 ![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/98ed39c4-c173-4938-9a99-319bd35718fb)
 ![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/7fb5f467-79cd-4a3c-ac30-61bfe173bea1)
 ![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/9d02227a-e18b-4b7d-9fe6-7501fcf03c4d)
 
-<img src="이미지주소.png" width="200" height="400"/>
-
+<!-- <img src="이미지주소.png" width="200" height="400"/>
+ -->
+ 
 ## 📖 API 명세서
 <details>
   <summary> 펼쳐보기 </summary>
@@ -47,47 +52,54 @@ FE git hub : https://github.com/HaeJinS2/MiniProject_Hanghae66_FE
 
 ## 1️⃣ 회원 관련 기능
   1. 회원 가입 API <br>
-    - userId : 크기 4 이상, 10 이하 / 소문자와 숫자만 입력가능, 공백 금지 / **중복 불가** <br>
-    - userName : 크기 10이하, 공백 금지 <br>
+    - userEmail : 이메일 형식/ **중복 불가** <br>
     - password : 크기 8 이상, 15 이하 / 대소문자, 숫자, 특수문자 가능, 공백 금지 <br>
+    - userNickNm  <br>
+
     
   2. 로그인 / 로그아웃 API<br>
     - 로그인 성공 시, Access Token과 Refresh Token을 발급하고 헤더에 토큰을 추가<br>
+  
+## 2️⃣ 숙박 업소 조회 관련 기능
+  1. 호텔/펜션 전체 목록 조회 API <br>
+    - 메인 페이지에서 호텔 또는 펜션을 누른 후 목록 조회 <br>
+  
+  2. 호텔/펜션 선택 목록 조회(필터) API <br>
+    - 호텔/펜션 전체 목록 조회 후 상세 조건(필터) 선택 후 목록 조회  <br>
+    
+  3. 숙박 업소 상세 조회 API <br>
+    - 하나의 숙박 업소 선택 시 객실정보, 리뷰 조회 <br>
 
-  3. 마이페이지 API <br>
-    - 나의 정보 확인 <br>
-    - 내가 쓴 게시글, 댓글 목록 조회 <br>
-  
-## 2️⃣ 게시글 관련 기능
-  1. 게시글 작성 API <br>
-    - 카테코리를 선택 후 글을 작성 <br>
-  
-  2. 게시글 수정 API <br>
-    - 내가 작성한 글에 한하여 수정 가능 <br>
-    
-  3. 게시글 삭제 API <br>
-    - 내가 작성한 글에 한하여 삭제 가능 <br>
+  4. 검색으로 숙박 업소 조회 API <br>
+    - 내용 또는 이름에 키워드가 들어 있는 숙박 업소 조회 <br>
 
-  4. 게시글 목록 조회 API <br>
-    - 게시글 목록을 내림차순으로 조회 <br>
-    - 카테고리 별 게시글 조회 <br>
+
+## 3️⃣ 예약 관련 기능
+  1. 예약 등록 API <br>
+    - 상세 조회에서 예약하기 누른 경우  <br>
     
-  5. 게시글 상세 조회 API <br>
-    - 게시글의 내용과 댓글 리스트 
+  2. 예약 조회 API <br>
+    - 자신이 예약한 내용 조회 <br>
     
-  6. 게시글 좋아요 API <br>
-    - 게시글에 좋아요 버튼을 눌러 좋아요 표시 <br>
-    - 버튼을 한 번 더 누르면 취소 <br>
+  3. 예약 날짜 조회 API <br>
+    - 예약 등록 시 체크인/아웃 날짜를 이용하여 숙박 일 확인 <br>
+
+  4. 예약 삭제 조회 API <br>
+    - 예약 등록한 것 삭제 <br>
   
-  7. 게시글 검색 API <br>
+## 4️⃣ 리뷰 기능
+
+  1. 로그인 없이 리뷰 조회 API <br>
+    - 로그인 없이 리뷰만 조회 가능 <br>
+  
+  2. 로그인 후 리뷰 조회 API <br>
+    - 리뷰 조회 및 리뷰 작성 가능 <br>
+
+## 5️⃣ 이미지 업로드 기능
+
+  1. 이미지 업로드 API <br>
     - 키워드를 입력하여 **제목+내용, 제목, 내용**으로 게시글 조회 <br>
-  
-  8. 댓글 작성 API <br>
-    - 모든 게시글에 댓글 작성 가능 <br>
 
-  9. 댓글 좋아요 API <br>
-    - 댓글에 좋아요 버튼을 눌러 좋아요 표시 가능 <br>
-    - 버튼을 한 번 더 누르면 취소 <br>
 
 ## 🚩 기능 구현을 위해 고민한 것
 
