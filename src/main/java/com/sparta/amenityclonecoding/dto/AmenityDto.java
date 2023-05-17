@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class AmenityDto {
+    private Long amenityId;
     private String amenityLocation;
     private String amenityDetailLocation;
     private String amenityCategory;
@@ -30,6 +31,7 @@ public class AmenityDto {
     public AmenityDto(Amenity amenity) {
 //        this.amenityLocation = amenity.getAmenityLocation();
 //        this.amenityDetailLocation = amenity.getAmenityDetailLocation();
+        this.amenityId = amenity.getAmenityId();
         this.amenityCategory = amenity.getAmenityCategory();
         this.amenityCommon = amenity.getAmenityCommon();
         this.amenityIn = amenity.getAmenityIn();
