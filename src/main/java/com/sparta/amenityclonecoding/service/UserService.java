@@ -3,6 +3,7 @@ package com.sparta.amenityclonecoding.service;
 import com.sparta.amenityclonecoding.dto.ResponseDto;
 import com.sparta.amenityclonecoding.dto.TokenDto;
 import com.sparta.amenityclonecoding.dto.UserRequestDto;
+import com.sparta.amenityclonecoding.dto.UserloginDto;
 import com.sparta.amenityclonecoding.entity.RefreshToken;
 import com.sparta.amenityclonecoding.entity.User;
 import com.sparta.amenityclonecoding.entity.UserRole;
@@ -70,7 +71,7 @@ public class UserService {
 
 
     @Transactional
-    public ResponseEntity<Message> login(UserRequestDto requestDto, HttpServletResponse response) {
+    public ResponseEntity<Message> login(UserloginDto requestDto, HttpServletResponse response) {
 
         String userEmail = requestDto.getUserEmail();
         String userPassword = requestDto.getUserPassword();
@@ -107,6 +108,7 @@ public class UserService {
             //응답 헤더에 토큰 추가
             setHeader(response, tokenDto, user.getUserEmail());
             Message message = Message.setSuccess(StatusEnum.OK, "로그인 성공");
+
             return new ResponseEntity<>(message, HttpStatus.OK);
 
         } catch (IllegalArgumentException e) {

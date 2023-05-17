@@ -3,6 +3,7 @@ package com.sparta.amenityclonecoding.controller;
 
 import com.sparta.amenityclonecoding.dto.UserRequestDto;
 import com.sparta.amenityclonecoding.dto.ResponseDto;
+import com.sparta.amenityclonecoding.dto.UserloginDto;
 import com.sparta.amenityclonecoding.exception.Message;
 import com.sparta.amenityclonecoding.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Message> login(@RequestBody UserRequestDto requestDto, HttpServletResponse response) {
+    public ResponseEntity<Message> login(@RequestBody UserloginDto requestDto, HttpServletResponse response) {
         return userService.login(requestDto, response);
     }
 
