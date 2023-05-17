@@ -14,14 +14,14 @@
 
 ## 📜와이어 프레임
 
-<!-- <img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d5c2eaec-d3ae-4482-8fb1-308dfcd61749).png" width="200" height="400"/>
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d5c2eaec-d3ae-4482-8fb1-308dfcd61749).png" width="200" height="400"/>
 <img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/f84a03b9-8f04-4bbf-bb12-71cb1098e61b).png" width="200" height="400"/>
 <img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/f7ac4316-166c-4ce8-9851-6a5d347daa82).png" width="200" height="400"/>
-<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/e94cc01c-8e08-4073-aa88-852bfa32a27f).png" width="200" height="400"/> -->
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/e94cc01c-8e08-4073-aa88-852bfa32a27f).png" width="200" height="400"/>
 
-![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/98ed39c4-c173-4938-9a99-319bd35718fb)
+<!-- ![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/98ed39c4-c173-4938-9a99-319bd35718fb)
 ![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/7fb5f467-79cd-4a3c-ac30-61bfe173bea1)
-![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/9d02227a-e18b-4b7d-9fe6-7501fcf03c4d)
+![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/9d02227a-e18b-4b7d-9fe6-7501fcf03c4d) -->
 
 
 
@@ -92,15 +92,15 @@ FE git hub : https://github.com/HaeJinS2/MiniProject_Hanghae66_FE
 ## 4️⃣ 리뷰 기능
 
   1. 로그인 없이 리뷰 조회 API <br>
-    - 로그인 없이 리뷰만 조회 가능 <br>
+    - 로그인 없이 리뷰만 조회 <br>
   
   2. 로그인 후 리뷰 조회 API <br>
-    - 리뷰 조회 및 리뷰 작성 가능 <br>
+    - 리뷰 조회 및 리뷰 작성 <br>
 
 ## 5️⃣ 이미지 업로드 기능
 
   1. 이미지 업로드 API <br>
-    - 키워드를 입력하여 **제목+내용, 제목, 내용**으로 게시글 조회 <br>
+    - 이미지 업로드만을 위한 기능 <br>
 
 
 ## 🚩 기능 구현을 위해 고민한 것
