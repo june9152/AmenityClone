@@ -13,12 +13,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class RoomDto {
+    private Long roomId;
     private String roomNm;
     private String roomPrice;
     private String roomChk;
     private List<RoomImgDto> roomImgDtoList = new ArrayList<>();
 
     public RoomDto(Room room) {
+        this.roomId = room.getRoomId();
         this.roomNm = room.getRoomNm();
         this.roomPrice = room.getRoomPrice();
         this.roomChk = room.getRoomChk();

@@ -2,6 +2,7 @@ package com.sparta.amenityclonecoding.controller;
 
 import com.sparta.amenityclonecoding.dto.*;
 import com.sparta.amenityclonecoding.entity.Reserve;
+import com.sparta.amenityclonecoding.exception.Message;
 import com.sparta.amenityclonecoding.security.UserDetailsImpl;
 import com.sparta.amenityclonecoding.service.AmenityService;
 import com.sparta.amenityclonecoding.service.ReserveService;
@@ -78,5 +79,4 @@ public class ReserveController {
         boolean ret = reserveService.deleteReserveInfo(reserveId,userDetails.getUser());
         return ret == true ? new ResponseDto("삭제 성공", HttpStatus.OK) :new ResponseDto("삭제 실패", HttpStatus.NOT_FOUND) ;
     }
-
 }
