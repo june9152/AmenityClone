@@ -14,10 +14,10 @@
 
 ## 📜와이어 프레임
 
-<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d5c2eaec-d3ae-4482-8fb1-308dfcd61749).png" width="200" height="400"/>
+<!-- <img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d5c2eaec-d3ae-4482-8fb1-308dfcd61749).png" width="200" height="400"/>
 <img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/f84a03b9-8f04-4bbf-bb12-71cb1098e61b).png" width="200" height="400"/>
 <img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/f7ac4316-166c-4ce8-9851-6a5d347daa82).png" width="200" height="400"/>
-<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/e94cc01c-8e08-4073-aa88-852bfa32a27f).png" width="200" height="400"/>
+<img src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/e94cc01c-8e08-4073-aa88-852bfa32a27f).png" width="200" height="400"/> -->
 
 
 ## 📰 ERD
