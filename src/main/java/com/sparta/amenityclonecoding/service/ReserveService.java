@@ -41,6 +41,7 @@ public class ReserveService {
         List<ReserveResponseDto> responseDtoList = new ArrayList<>();
         for (Reserve reservation : reservations) {
             ReserveResponseDto responseDto = new ReserveResponseDto();
+            responseDto.setId(reservation.getId());
             responseDto.setUsername(reservation.getUsername());
             responseDto.setPayMethod(reservation.getPayMethod());
             responseDto.setUserEmail(reservation.getUserEmail());
