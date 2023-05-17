@@ -16,7 +16,7 @@ public interface ReserveRepository extends JpaRepository<Reserve, Long> {
     List<Reserve> findReserveByAmenityIdAndUserIdOrderByCreateDateDesc(Long amenityId, Long userId);
 
     @Query("select r from TB_RESERVE r where r.reserveStartDate >= :startDat and r.reserveEndDate <= :endDat")
-    List<Reserve> chkReserveDat(@Param("startDat") Long startDat, @Param("endDat") Long endDat);
+    List<Reserve> chkReserveDat(@Param("startDat") String startDat, @Param("endDat") String endDat);
 
 //    @Query(value = "select exists (select 1 from TB_RESERVE r where r.reserveStartDate >= :startDat and r.reserveEndDate <= :endDat and r.amenityId = :amenityId and r.roomId = :roomId)", nativeQuery = true)
 //    boolean chkReserve(@Param("startDat") Date startDat, @Param("endDat") Date endDat, @Param("amenityId") Long amenityId, @Param("roomId") Long roomId);
@@ -27,5 +27,7 @@ public interface ReserveRepository extends JpaRepository<Reserve, Long> {
             @Param("amenityId") Long amenityId,
             @Param("roomId") Long roomId
     );
+
+    Long countReserveByAmenityId(Long amenityId);
 
 }

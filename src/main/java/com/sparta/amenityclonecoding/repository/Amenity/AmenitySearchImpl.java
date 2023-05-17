@@ -7,6 +7,7 @@ import com.querydsl.jpa.JPQLQuery;
 import com.sparta.amenityclonecoding.dto.AmenityRequestDto;
 import com.sparta.amenityclonecoding.entity.Amenity;
 import com.sparta.amenityclonecoding.entity.QAmenity;
+import com.sparta.amenityclonecoding.entity.QReserve;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
 import java.util.List;

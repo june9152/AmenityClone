@@ -11,10 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,6 +24,7 @@ public class AmenityService {
     private final RoomImgRepository roomImgRepository;
     private final ReviewRepository reviewRepository;
     private final ReviewImgRepository reviewImgRepository;
+    private final ReserveRepository reserveRepository;
 
 
 
@@ -125,22 +123,44 @@ public class AmenityService {
         List<Amenity> amenityList = new ArrayList<>();
         List<AmenityImgDto> amenityImgDtoList = new ArrayList<>();
         List<AmenityDto> amenityDtoList = new ArrayList<>();
+        HashMap<Long, Long> chkCnt = new HashMap<>();
+        String sDat = amenityRequestDto.getAmenitySdat();
+        String eDat = amenityRequestDto.getAmenityEdat();
+        List<Reserve> reserveList = reserveRepository.chkReserveDat(sDat, eDat);
+        Long amenityId = 0L;
+        Long roomCnt = 0L;
+        Long resvCnt = 0L;
+
+        for(Reserve reserve: reserveList) {
+            if (chkCnt.containsKey(reserve.getAmenityId())) {
+                chkCnt.put(reserve.getAmenityId(), chkCnt.get(reserve.getAmenityId()) + 1L);
+            } else {
+                chkCnt.put(reserve.getAmenityId(), 1L);
+            }
+        }
 
         amenityList = amenityRepository.searchFilter(amenityRequestDto);
 
 
         for (Amenity amenity : amenityList) {
-            AmenityDto amenityDto = new AmenityDto(amenity);
-            amenityDtoList.add(amenityDto);
-            if(amenityImgDtoList.size() < 1) {
-                AmenityImg amenityImg = amenityImgRepository.findAmenityImgByAmenity_AmenityIdAndImgCnt(amenity.getAmenityId(), 0L);
-                AmenityImgDto amenityImgDto = new AmenityImgDto(amenityImg);
-                amenityImgDtoList.add(amenityImgDto);
+            amenityId = amenity.getAmenityId();
+            //기간내 조회한 예약내역 테이블의 숙박업소 ID값이 존재한다면
+            if(chkCnt.containsKey(amenityId)) {
+                //현재 숙박업소의 룸 카운트와 예약내역 테이블의 숙박업소 아이디로 조회한 값 카운트를 비교
+                roomCnt = roomRepository.countRoomByAmenity_AmenityId(amenityId);
+                resvCnt = chkCnt.get(amenityId);
+                if(roomCnt > resvCnt) {
+                    AmenityDto amenityDto = new AmenityDto(amenity);
+                    amenityDtoList.add(amenityDto);
+                    if(amenityImgDtoList.size() < 1) {
+                        AmenityImg amenityImg = amenityImgRepository.findAmenityImgByAmenity_AmenityIdAndImgCnt(amenity.getAmenityId(), 0L);
+                        AmenityImgDto amenityImgDto = new AmenityImgDto(amenityImg);
+                        amenityImgDtoList.add(amenityImgDto);
+                    }
+                    amenityDto.setAmenityImgDtoList(amenityImgDtoList);
+                }
             }
-
-            amenityDto.setAmenityImgDtoList(amenityImgDtoList);
         }
-
         Message message = Message.setSuccess(StatusEnum.OK, "성공", amenityDtoList);
         return new ResponseEntity<Message>(message, HttpStatus.OK);
     }

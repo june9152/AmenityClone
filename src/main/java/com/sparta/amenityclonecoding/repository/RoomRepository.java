@@ -1,7 +1,6 @@
 package com.sparta.amenityclonecoding.repository;
 
 import com.sparta.amenityclonecoding.entity.Room;
-import com.sparta.amenityclonecoding.entity.RoomImg;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,4 +11,5 @@ import java.util.Optional;
 public interface RoomRepository extends JpaRepository<Room, Long> {
     List<Room> findRoomByAmenity_AmenityId(Long amenityId);
     Optional<Room> findByRoomId(Long roomId);
+    Long countRoomByAmenity_AmenityId(Long amenityId);
 }
