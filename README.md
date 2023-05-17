@@ -36,14 +36,21 @@
 </details>
 
 ## 👨‍👩‍👧팀원
-|이름|역할|
+<!-- |이름|역할|
 |------|---|
 |박영준(BE팀장)</br>[@june9152](https://github.com/june9152)|- 댓글 API</br>- 게시글, 댓글 좋아요 API</br>- 서버 배포</br>- 검색 기능</br>- DB 연동|
 |김은양</br>[@silversheep26](https://github.com/silversheep26)|- RefreshToken, AccessToken</br>- 유저 API </br>- entity 연관관계|
 |고예진</br>[@YEJINGO](https://github.com/YEJINGO)|-게시글 API</br>-  검색 기능|
-|정성윤</br>[@kanteluv](https://github.com/kanteluv)|- 댓글 API </br>- 게시글, 댓글 좋아요 API </br>-  검색 기능|
+|정성윤</br>[@kanteluv](https://github.com/kanteluv)|- 댓글 API </br>- 게시글, 댓글 좋아요 API </br>-  검색 기능| -->
 
-FE git hub : https://github.com/HaeJinS2/MiniProject_Hanghae66_FE
+|이름|깃허브|
+|------|---|
+|박영준(BE팀장)|[@june9152](https://github.com/june9152)|
+|김은양|[@silversheep26](https://github.com/silversheep26)|
+|고예진|[@YEJINGO](https://github.com/YEJINGO)|
+|정성윤|[@kanteluv](https://github.com/kanteluv)|
+
+FE git hub : https://github.com/AmenityCloneCoding/AmenityClone
 
 ## ⚙️ Tech Stack
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> <br>
