@@ -13,8 +13,7 @@
 (https://www.notion.so/S-A-afa6ceba07db4022bebde44ccb35807a)
 
 ## 📜와이어 프레임
-<!-- <img width="913" alt="스크린샷 2023-05-11 014246" src="https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/b30b6beb-c5e0-4635-b1ab-7bc7847a0d3a"> -->
-<img width="913" src="![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/6a5e01bc-392a-41e5-8cfa-cabbb32659fc)">
+![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/d2459eed-e7ae-4717-990d-a1dbe7b2eb64)
 
 ## 📰 ERD
 ![hh66 ERD](https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/a5a8e351-6365-43c1-bede-76a5bc01670f)
