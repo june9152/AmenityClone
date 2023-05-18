@@ -26,13 +26,12 @@
 
 
 ## 📰 ERD
-![erd](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/291756b4-a0a8-420f-91a7-dfa8a029c504)
-
+![image](https://github.com/AmenityCloneCoding/AmenityClone/assets/122955367/1c7625d3-d555-42f2-bb05-c6eee8ef1917)
  
 ## 📖 API 명세서
 <details>
   <summary> 펼쳐보기 </summary>
-<img width="964" alt="hh66 API 명세서" src="">
+<img width="964" alt="여기 어떠니 API 명세서" src="">
 </details>
 
 ## 👨‍👩‍👧팀원
