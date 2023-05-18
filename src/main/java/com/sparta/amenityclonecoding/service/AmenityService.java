@@ -121,7 +121,6 @@ public class AmenityService {
     @Transactional(readOnly = true)
     public ResponseEntity<Message> getAmenityFilter(AmenityRequestDto amenityRequestDto) {
         List<Amenity> amenityList = new ArrayList<>();
-        List<AmenityImgDto> amenityImgDtoList = new ArrayList<>();
         List<AmenityDto> amenityDtoList = new ArrayList<>();
         HashMap<Long, Long> chkCnt = new HashMap<>();
         String sDat = amenityRequestDto.getAmenitySdat();
@@ -141,9 +140,9 @@ public class AmenityService {
 
         amenityList = amenityRepository.searchFilter(amenityRequestDto);
 
-
         for (Amenity amenity : amenityList) {
             amenityId = amenity.getAmenityId();
+            List<AmenityImgDto> amenityImgDtoList = new ArrayList<>();
             //기간내 조회한 예약내역 테이블의 숙박업소 ID값이 존재한다면
             if(chkCnt.containsKey(amenityId)) {
                 //현재 숙박업소의 룸 카운트와 예약내역 테이블의 숙박업소 아이디로 조회한 값 카운트를 비교
@@ -159,6 +158,17 @@ public class AmenityService {
                     }
                     amenityDto.setAmenityImgDtoList(amenityImgDtoList);
                 }
+            }
+            else
+            {
+                AmenityDto amenityDto = new AmenityDto(amenity);
+                amenityDtoList.add(amenityDto);
+                if(amenityImgDtoList.size() < 1) {
+                    AmenityImg amenityImg = amenityImgRepository.findAmenityImgByAmenity_AmenityIdAndImgCnt(amenity.getAmenityId(), 0L);
+                    AmenityImgDto amenityImgDto = new AmenityImgDto(amenityImg);
+                    amenityImgDtoList.add(amenityImgDto);
+                }
+                amenityDto.setAmenityImgDtoList(amenityImgDtoList);
             }
         }
         Message message = Message.setSuccess(StatusEnum.OK, "성공", amenityDtoList);
