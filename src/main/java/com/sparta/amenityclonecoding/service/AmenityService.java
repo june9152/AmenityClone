@@ -6,6 +6,7 @@ import com.sparta.amenityclonecoding.exception.Message;
 import com.sparta.amenityclonecoding.exception.StatusEnum;
 import com.sparta.amenityclonecoding.repository.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class AmenityService {
 

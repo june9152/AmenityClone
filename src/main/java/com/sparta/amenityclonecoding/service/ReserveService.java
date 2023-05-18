@@ -8,6 +8,7 @@ import com.sparta.amenityclonecoding.repository.*;
 import com.sparta.amenityclonecoding.security.UserDetailsImpl;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
 import java.util.Date.*;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ReserveService {
     private final ReserveRepository reserveRepository;

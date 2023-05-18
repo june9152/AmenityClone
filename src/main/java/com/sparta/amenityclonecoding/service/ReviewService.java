@@ -2,8 +2,11 @@ package com.sparta.amenityclonecoding.service;
 
 import com.sparta.amenityclonecoding.dto.*;
 import com.sparta.amenityclonecoding.entity.*;
+import com.sparta.amenityclonecoding.exception.ApiException;
+import com.sparta.amenityclonecoding.exception.ExceptionEnum;
 import com.sparta.amenityclonecoding.repository.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 @Transactional
 @RequiredArgsConstructor
 public class ReviewService {
@@ -30,7 +34,7 @@ public class ReviewService {
     @Transactional
     public ResponseDto writeReview(Long amenityId, ReviewRequestDto requestDto, List<MultipartFile> image, User user) throws IOException {
         User member = userRepository.findUserByUserEmail(user.getUserEmail()).orElseThrow(
-                () -> new IllegalArgumentException("로그인 후 이용 가능합니다.")
+                () -> new ApiException(ExceptionEnum.LOGIN)
         );
         String reviewTitle = requestDto.getReviewTitle();
         String reviewContents = requestDto.getReviewContent();
