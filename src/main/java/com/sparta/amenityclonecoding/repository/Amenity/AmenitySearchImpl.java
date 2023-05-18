@@ -10,7 +10,9 @@ import com.sparta.amenityclonecoding.entity.QAmenity;
 import com.sparta.amenityclonecoding.entity.QReserve;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AmenitySearchImpl extends QuerydslRepositorySupport implements AmenitySearch {
 
@@ -23,9 +25,17 @@ public class AmenitySearchImpl extends QuerydslRepositorySupport implements Amen
         QAmenity amenity = QAmenity.amenity;
         JPQLQuery<Amenity> query = from(amenity);
 
-        String amenityCommon = String.join(",", amenityRequestDto.getAmenityCommon());
-        String amenityIn = String.join(",", amenityRequestDto.getAmenityIn());
-        String amenityEtc = String.join(",", amenityRequestDto.getAmenityEtc());
+        List<String> commonList = Arrays.asList(amenityRequestDto.getAmenityCommon());
+        List<String> inList = Arrays.asList(amenityRequestDto.getAmenityIn());
+        List<String> etcList = Arrays.asList(amenityRequestDto.getAmenityEtc());
+
+        List<String> common = commonList.stream().distinct().collect(Collectors.toList());
+        List<String> in = inList.stream().distinct().collect(Collectors.toList());
+        List<String> etc = etcList.stream().distinct().collect(Collectors.toList());
+
+        String amenityCommon = String.join(",", common);
+        String amenityIn = String.join(",", in);
+        String amenityEtc = String.join(",", etc);
 
         query.where(
                 amenityTypeEq(amenityRequestDto.getAmenityType(), amenity),
