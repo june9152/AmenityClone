@@ -32,7 +32,7 @@
 ## 📖 API 명세서
 <details>
   <summary> 펼쳐보기 </summary>
-<img width="964" alt="hh66 API 명세서" src="https://github.com/seunghee58/miniproject_hanhae66/assets/129656095/719cd245-0070-4e8d-9870-8fb55d2f5265">
+<img width="964" alt="hh66 API 명세서" src="">
 </details>
 
 ## 👨‍👩‍👧팀원
